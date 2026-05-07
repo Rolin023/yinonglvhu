@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>技术体系 – 液态地膜无人机解决方案</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== 展厅式布局 ===== */
+        .tech-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+            margin-top: 20px;
+        }
+
+        /* 每一组技术：大图 + 文字 */
+        .tech-piece {
+            position: relative;
+            width: 100%;
+            border-radius: 24px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            transition: all 0.5s ease;
+        }
+        .tech-piece:hover {
+            border-color: rgba(107, 209, 124, 0.2);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 大图区域 */
+        .tech-piece .visual {
+            width: 100%;
+            padding: 20px 20px 0 20px;
+        }
+        .tech-piece .visual img {
+            width: 100%;
+            max-height: 500px;
+            object-fit: contain;
+            display: block;
+            border-radius: 16px;
+            transition: transform 0.6s ease;
+        }
+        .tech-piece:hover .visual img {
+            transform: scale(1.02);
+        }
+
+        /* 文字信息 */
+        .tech-piece .info {
+            padding: 24px 28px 32px 28px;
+            background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.4));
+        }
+        .tech-piece .info h3 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .tech-piece .info .tag {
+            display: inline-block;
+            background: rgba(107, 209, 124, 0.15);
+            padding: 4px 18px;
+            border-radius: 30px;
+            font-size: 14px;
+            color: #6bd17c;
+            font-weight: 500;
+            margin-bottom: 10px;
+            backdrop-filter: blur(4px);
+        }
+        .tech-piece .info p {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.9;
+            max-width: 800px;
+        }
+
+        /* 数字标记（浮动装饰） */
+        .tech-piece .number {
+            position: absolute;
+            top: 20px;
+            right: 28px;
+            font-size: 72px;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.04);
+            letter-spacing: -4px;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        /* 数据展示 —— 做轻悬浮 */
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+            padding: 40px 20px;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.02);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+        }
+        .stats-row .stat {
+            text-align: center;
+        }
+        .stats-row .stat .num {
+            font-size: 48px;
+            font-weight: 700;
+            color: #6bd17c;
+            display: block;
+            line-height: 1.1;
+        }
+        .stats-row .stat .label {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* 响应式 */
+        @media (max-width: 992px) {
+            .tech-piece .visual img {
+                max-height: 350px;
+            }
+            .tech-piece .info h3 {
+                font-size: 24px;
+            }
+            .tech-piece .number {
+                font-size: 48px;
+                top: 16px;
+                right: 20px;
+            }
+            .stats-row .stat .num {
+                font-size: 36px;
+            }
+        }
+        @media (max-width: 768px) {
+            .tech-gallery {
+                gap: 40px;
+            }
+            .tech-piece .visual img {
+                max-height: 250px;
+            }
+            .tech-piece .info {
+                padding: 18px 20px 24px 20px;
+            }
+            .tech-piece .info h3 {
+                font-size: 20px;
+            }
+            .tech-piece .info p {
+                font-size: 15px;
+            }
+            .stats-row {
+                gap: 24px;
+                padding: 30px 16px;
+            }
+            .stats-row .stat .num {
+                font-size: 30px;
+            }
+        }
+        @media (max-width: 480px) {
+            .tech-piece .visual img {
+                max-height: 180px;
+            }
+            .tech-piece .info h3 {
+                font-size: 18px;
+            }
+            .tech-piece .info p {
+                font-size: 14px;
+            }
+            .tech-piece .number {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">
+            <div class="brand-icon"><div style="background:#4CAF50; width:100%; height:100%; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">🌱</div></div>
+            <div class="brand-text">
+                <span class="brand-name">武汉益农绿护科技有限公司</span>
+                <span class="brand-slogan">绿色农业 · 高效生产 · 可持续发展</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li><a href="solutions.html">解决方案</a></li>
+            <li class="active"><a href="technology.html">技术体系</a></li>
+            <li><a href="products.html">产品系统</a></li>
+            <li><a href="cases.html">应用案例</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <a href="contact.html" class="btn-contact">联系我们</a>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            <h2 class="section-title">技术体系</h2>
+            <p class="section-subtitle">四项核心科技，精准衔接每一处农业生产痛点。</p>
+
+            <!-- 数据展示 -->
+            <div class="stats-row">
+                <div class="stat">
+                    <span class="num">94.7%</span>
+                    <span class="label">抑菌率</span>
+                </div>
+                <div class="stat">
+                    <span class="num">≥20MPa</span>
+                    <span class="label">拉伸强度</span>
+                </div>
+                <div class="stat">
+                    <span class="num">≤0.6m</span>
+                    <span class="label">雾滴漂移</span>
+                </div>
+            </div>
+
+            <!-- 四大技术展厅 -->
+            <div class="tech-gallery">
+
+                <!-- 1 -->
+                <div class="tech-piece">
+                    <div class="number">01</div>
+                    <div class="visual">
+                        <img src="assets/bslm_process.png" alt="BSLM制备原理图">
+                    </div>
+                    <div class="info">
+                        <span class="tag">🔧 解决地膜强度不足、保水差</span>
+                        <h3>BSLM 制备工艺</h3>
+                        <p>通过自由基溶液聚合，丙烯酸接枝到淀粉上形成 PAA 交联网络，显著提升地膜的拉伸强度（超过 20MPa）与保水性能。成膜致密均匀，可完全替代传统塑料地膜，从源头解决白色污染。</p>
+                    </div>
+                </div>
+
+                <!-- 2 -->
+                <div class="tech-piece">
+                    <div class="number">02</div>
+                    <div class="visual">
+                        <img src="assets/soil_combined.png" alt="地膜与土壤结合">
+                    </div>
+                    <div class="info">
+                        <span class="tag">🛡️ 解决土传病害频发、农药依赖</span>
+                        <h3>多靶向抗菌体系</h3>
+                        <p>“物理阻隔 + 化学抑菌 + 生态调控”三种机制协同作用，构建抑病型根际微生态，抑菌率高达 94.7%，有效减少化学农药使用量，保障农产品安全与土壤健康。</p>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <div class="tech-piece">
+                    <div class="number">03</div>
+                    <div class="visual">
+                        <img src="assets/nozzle_diagram.png" alt="静电喷嘴结构图">
+                    </div>
+                    <div class="info">
+                        <span class="tag">🎯 解决雾滴漂移、附着率低</span>
+                        <h3>静电精准喷施技术</h3>
+                        <p>感应式静电充电系统使雾滴荷电，精准吸附作物叶面，减少药液漂移，提升沉积率和利用效率。可节约药剂成本 30% 以上，同时降低环境残留风险。</p>
+                    </div>
+                </div>
+
+                <!-- 4 -->
+                <div class="tech-piece">
+                    <div class="number">04</div>
+                    <div class="visual">
+                        <img src="assets/drone_structure.png" alt="无人机结构图">
+                    </div>
+                    <div class="info">
+                        <span class="tag">🚁 解决丘陵/大棚作业难、效率低</span>
+                        <h3>窄幅喷施无人机</h3>
+                        <p>专为窄幅场景设计，配合下压风场导引装置，有效喷幅 0.5-1.5m，雾滴漂移 ≤0.6m。可精准覆盖复杂地形，作业效率提升 40 倍，大幅降低人工成本。</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="solutions.html">解决方案</a>
+                <a href="technology.html">技术体系</a>
+                <a href="products.html">产品系统</a>
+                <a href="cases.html">应用案例</a>
+                <a href="about.html">关于我们</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 武汉益农绿护科技有限公司 · 绿色农业 · 高效生产 · 可持续发展</p></div>
+    </footer>
+
+</body>
+</html>

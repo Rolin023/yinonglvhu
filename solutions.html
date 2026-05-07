@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>解决方案 – 液态地膜无人机解决方案</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* 流程卡片样式 */
+        .flow-step {
+            background: rgba(76, 175, 80, 0.12);
+            border: 1px solid rgba(76, 175, 80, 0.25);
+            border-radius: 12px;
+            padding: 14px 18px;
+            text-align: center;
+            min-width: 100px;
+            backdrop-filter: blur(4px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+        .flow-step:hover {
+            transform: translateY(-4px);
+            border-color: #6bd17c;
+            background: rgba(76, 175, 80, 0.20);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.3);
+        }
+        .flow-step span {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        .flow-arrow {
+            color: #6bd17c;
+            font-size: 22px;
+            font-weight: 300;
+            opacity: 0.8;
+            flex-shrink: 0;
+            padding: 0 4px;
+        }
+        .flow-down-arrow {
+            color: #6bd17c;
+            font-size: 28px;
+            font-weight: 300;
+            opacity: 0.8;
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin: 4px 0;
+        }
+        .flow-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 8px 4px;
+            width: 100%;
+        }
+        .flow-step-final {
+            background: rgba(107, 209, 124, 0.25);
+            border-color: #6bd17c;
+        }
+
+        @media (max-width: 768px) {
+            .flow-step {
+                min-width: 80px;
+                padding: 10px 14px;
+            }
+            .flow-step span {
+                font-size: 13px;
+            }
+            .flow-arrow {
+                font-size: 18px;
+            }
+            .flow-down-arrow {
+                font-size: 22px;
+            }
+        }
+        @media (max-width: 480px) {
+            .flow-step {
+                min-width: 70px;
+                padding: 8px 10px;
+            }
+            .flow-step span {
+                font-size: 12px;
+            }
+            .flow-arrow {
+                font-size: 16px;
+            }
+            .flow-down-arrow {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">
+            <div class="brand-icon"><div style="background:#4CAF50; width:100%; height:100%; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">🌱</div></div>
+            <div class="brand-text">
+                <span class="brand-name">武汉益农绿护科技有限公司</span>
+                <span class="brand-slogan">绿色农业 · 高效生产 · 可持续发展</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">首页</a></li>
+            <li class="active"><a href="solutions.html">解决方案</a></li>
+            <li><a href="technology.html">技术体系</a></li>
+            <li><a href="products.html">产品系统</a></li>
+            <li><a href="cases.html">应用案例</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <a href="contact.html" class="btn-contact">联系我们</a>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            <h2 class="section-title">解决方案</h2>
+            <p class="section-subtitle">“材料+装备+服务”闭环，让绿色科技精准落地。</p>
+
+            <!-- 两行布局流程（逻辑修正：第二行从回收开始） -->
+            <div style="background:rgba(255,255,255,0.04); padding:32px 20px; border-radius:16px; margin-bottom:48px; backdrop-filter:blur(4px); border:1px solid rgba(255,255,255,0.06);">
+                <h3 style="color:#fff; margin-bottom:24px; font-size:20px; font-weight:500; text-align:center;">全流程作业闭环</h3>
+                <div style="display:flex; flex-direction:column; align-items:center; gap:6px;">
+                    
+                    <!-- 第一行：步骤 1-4（加入 → 规划 → 启动 → 喷洒） -->
+                    <div class="flow-row">
+                        <div class="flow-step"><span>加入多功能性<br>液态地膜</span></div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step"><span>规划无人机<br>路线</span></div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step"><span>启动到达<br>铺设地点上空</span></div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step"><span>启动喷洒</span></div>
+                    </div>
+
+                    <!-- 竖向箭头指向第二行（从喷洒指向回收） -->
+                    <span class="flow-down-arrow">↘</span>
+
+                    <!-- 第二行：步骤 5-8（回收 → 等待 → 检查 → 正常使用） -->
+                    <div class="flow-row">
+                        <div class="flow-step"><span>回收无人机</span></div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step"><span>等待地膜成型</span></div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step"><span>检查地膜状态</span></div>
+                        <span class="flow-arrow">→</span>
+                        <div class="flow-step flow-step-final"><span>正常使用</span></div>
+                    </div>
+
+                </div>
+                <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-top:16px; text-align:center;">从剂液准备到成膜质检，全流程精准可控，高效落地。</p>
+            </div>
+
+            <!-- 三大服务模块 -->
+            <div class="card-grid card-grid-3">
+                <div class="card">
+                    <h3>材料供应</h3>
+                    <div class="img-box" style="height: 160px; margin-bottom: 12px;">
+                        <img src="assets/soil_combined.png" alt="地膜与土壤结合" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <p>标准版与定制版淀粉基液态地膜，适配不同作物与土壤。</p>
+                </div>
+                <div class="card">
+                    <h3>装备服务</h3>
+                    <div class="img-box" style="height: 160px; margin-bottom: 12px;">
+                        <img src="assets/drone_structure.png" alt="无人机结构图" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <p>四旋翼植保无人机 + 静电喷头，有效喷幅0.5-1.5m，雾滴漂移≤0.6m。</p>
+                </div>
+                <div class="card">
+                    <h3>数据支持</h3>
+                    <div class="img-box" style="height: 160px; margin-bottom: 12px;">
+                        <img src="assets/certificates.png" alt="软著证书" style="height: 100%; object-fit: cover;">
+                    </div>
+                    <p>降解预测、路径规划、协同决策，提供全程数据追踪与效果评估。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="solutions.html">解决方案</a>
+                <a href="technology.html">技术体系</a>
+                <a href="products.html">产品系统</a>
+                <a href="cases.html">应用案例</a>
+                <a href="about.html">关于我们</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 武汉益农绿护科技有限公司 · 绿色农业 · 高效生产 · 可持续发展</p></div>
+    </footer>
+
+</body>
+</html>

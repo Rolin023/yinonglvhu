@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>首页 – 液态地膜无人机解决方案</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        /* 首页专用样式（保持原样，仅用于首页） */
+        #page-home {
+            height: 100vh; width: 100%; position: relative; padding: 0;
+            background: url('assets/hero.png') center center / cover no-repeat;
+            background-color: #0f1a13;
+        }
+        .hero-overlay {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.4) 45%, rgba(0, 0, 0, 0.1) 70%, rgba(0, 0, 0, 0) 100%);
+            pointer-events: none;
+        }
+        .hero-content {
+            position: absolute; top: 45%; left: 60px; transform: translateY(-50%);
+            z-index: 2; max-width: 700px; text-align: left; margin: 0;
+        }
+        .hero-content h1 { font-size: 72px; font-weight: 800; line-height: 1.1; letter-spacing: 1px; color: #fff; }
+        .hero-content h1 .highlight { color: #6bd17c; }
+        .hero-content .subtitle { font-size: 28px; font-weight: 400; color: rgba(255, 255, 255, 0.95); margin-top: 16px; letter-spacing: 1px; }
+        .btn-learn { display: inline-block; margin-top: 30px; padding: 14px 40px; background: #4CAF50; color: #fff; border-radius: 40px; font-size: 17px; font-weight: 500; border: none; cursor: pointer; transition: background 0.3s; }
+        .btn-learn:hover { background: #3d8b4a; }
+        .features {
+            position: absolute; bottom: 120px; left: 60px; right: 60px;
+            z-index: 2; display: flex; justify-content: flex-start; gap: 40px; flex-wrap: wrap;
+        }
+        .feature-item { display: flex; flex-direction: column; align-items: center; text-align: center; min-width: 120px; flex: 0 0 auto; }
+        .feature-icon { width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(255, 255, 255, 0.5); background: rgba(255, 255, 255, 0.1); display: flex; align-items: center; justify-content: center; overflow: hidden; margin-bottom: 12px; }
+        .feature-icon img { width: 40px; height: 40px; object-fit: contain; display: block; }
+        .feature-title { font-size: 16px; font-weight: 600; color: #fff; letter-spacing: 0.5px; margin-bottom: 4px; }
+        .feature-desc { font-size: 13px; color: #ccc; font-weight: 400; letter-spacing: 0.3px; }
+        .scroll-hint { position: absolute; bottom: 0; left: 60px; z-index: 3; display: flex; align-items: center; gap: 10px; font-size: 13px; color: rgba(255, 255, 255, 0.5); letter-spacing: 0.5px; }
+
+        @media (max-width: 1200px) {
+            .hero-content { left: 40px; }
+            .features { left: 40px; right: 40px; gap: 30px; bottom: 100px; }
+            .hero-content h1 { font-size: 56px; }
+            .hero-content .subtitle { font-size: 22px; }
+        }
+        @media (max-width: 992px) {
+            .hero-content h1 { font-size: 44px; }
+            .hero-content .subtitle { font-size: 18px; }
+            .features { gap: 20px; bottom: 80px; }
+            .feature-item { min-width: 100px; }
+            .feature-icon { width: 56px; height: 56px; }
+            .feature-icon img { width: 32px; height: 32px; }
+        }
+        @media (max-width: 768px) {
+            .hero-content { left: 20px; right: 20px; max-width: 100%; top: 40%; }
+            .hero-content h1 { font-size: 34px; line-height: 1.2; }
+            .hero-content .subtitle { font-size: 17px; margin-top: 10px; }
+            .btn-learn { padding: 10px 28px; font-size: 15px; margin-top: 20px; }
+            .features { position: relative; bottom: auto; left: auto; right: auto; margin-top: 50px; padding: 0 20px 30px; justify-content: center; gap: 14px; }
+            .feature-item { flex: 0 0 calc(50% - 12px); min-width: 70px; padding: 6px 0; }
+            .feature-icon { width: 48px; height: 48px; }
+            .feature-icon img { width: 28px; height: 28px; }
+            .scroll-hint { display: none; }
+        }
+        @media (max-width: 480px) {
+            .hero-content h1 { font-size: 28px; }
+            .hero-content .subtitle { font-size: 15px; }
+            .feature-item { flex: 0 0 calc(50% - 10px); min-width: 60px; }
+            .feature-icon { width: 42px; height: 42px; }
+            .feature-icon img { width: 24px; height: 24px; }
+            .feature-title { font-size: 13px; }
+            .feature-desc { font-size: 11px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="brand">
+            <div class="brand-icon"><div style="background:#4CAF50; width:100%; height:100%; border-radius:50%; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px;">🌱</div></div>
+            <div class="brand-text">
+                <span class="brand-name">武汉益农绿护科技有限公司</span>
+                <span class="brand-slogan">绿色农业 · 高效生产 · 可持续发展</span>
+            </div>
+        </div>
+        <ul class="nav-links">
+            <li class="active"><a href="index.html">首页</a></li>
+            <li><a href="solutions.html">解决方案</a></li>
+            <li><a href="technology.html">技术体系</a></li>
+            <li><a href="products.html">产品系统</a></li>
+            <li><a href="cases.html">应用案例</a></li>
+            <li><a href="about.html">关于我们</a></li>
+        </ul>
+        <a href="contact.html" class="btn-contact">联系我们</a>
+    </nav>
+
+    <section id="page-home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>科技赋能<span class="highlight">农业</span><br />绿色守护<span class="highlight">未来</span></h1>
+            <p class="subtitle">多功能淀粉基液态地膜解决方案</p>
+            <a href="solutions.html" class="btn-learn">了解更多 →</a>
+        </div>
+        <div class="features">
+            <div class="feature-item"><div class="feature-icon"><img src="assets/feature1.png" alt="全生物降解" /></div><span class="feature-title">全生物降解</span><span class="feature-desc">绿色环保</span></div>
+            <div class="feature-item"><div class="feature-icon"><img src="assets/feature2.png" alt="抗土传病害" /></div><span class="feature-title">抗土传病害</span><span class="feature-desc">抑制病原菌</span></div>
+            <div class="feature-item"><div class="feature-icon"><img src="assets/feature3.png" alt="保水保肥" /></div><span class="feature-title">保水保肥</span><span class="feature-desc">提升肥效</span></div>
+            <div class="feature-item"><div class="feature-icon"><img src="assets/feature4.png" alt="无人机高效喷施" /></div><span class="feature-title">无人机高效喷施</span><span class="feature-desc">精准覆盖</span></div>
+        </div>
+        <div class="scroll-hint"><span>&nbsp;</span> </div>
+</section>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-links">
+                <a href="solutions.html">解决方案</a>
+                <a href="technology.html">技术体系</a>
+                <a href="products.html">产品系统</a>
+                <a href="cases.html">应用案例</a>
+                <a href="about.html">关于我们</a>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2025 武汉益农绿护科技有限公司 · 绿色农业 · 高效生产 · 可持续发展</p></div>
+    </footer>
+
+</body>
+</html>
